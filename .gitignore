@@ -16,8 +16,3 @@ env/
 .mypy_cache/
 .ruff_cache/
 
-# Project files intentionally excluded from this portfolio repository
-*/README.md
-/CURRICULUM_ALIGNMENT.md
-/PROJECT_INDEX.md
-/run_all.sh
