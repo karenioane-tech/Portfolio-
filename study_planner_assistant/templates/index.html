@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Planner Assistant · Data Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">DL</span><span>Data Lab</span></a>
+    <div class="nav-label">Week 5 · AI & prompt engineering</div>
+    <nav class="nav">
+      <a class="nav-link active" href="{{ url_for('index') }}"><span class="nav-dot"></span>Workspace</a>
+      <div class="nav-link" aria-label="Project status"><span class="nav-dot" style="background:var(--good)"></span>Project status: READY</div>
+    </nav>
+    <div class="sidebar-note"><strong>Build note</strong>This project is intentionally standalone: its Flask backend, templates, CSS, JS, and data stay inside this folder.</div>
+  </aside>
+  <main class="main">
+    <div class="topbar"><div class="eyebrow">W5 / AI & prompt engineering</div><div class="topbar-meta"><span class="status"><span class="status-dot"></span>Submission build</span><span class="small muted">Project status: READY FOR REVIEW</span></div></div>
+    <section class="hero"><div><div class="eyebrow">Project P1</div><h1>Study Planner Assistant</h1><p>Translate a broad learning goal into a focused sequence of small sessions, with enough structure to start today.</p></div><div class="hero-chip"><span>Mode</span><strong>Focused</strong></div></section>
+
+<div class="grid grid-main"><section class="card"><div class="card-head"><div><div class="card-kicker">Planner input</div><h2 class="card-title">Shape a learning sprint</h2><p class="card-subtitle">The assistant returns a deterministic plan you can edit after export.</p></div></div><form id="plan-form" class="form-grid"><div class="field full"><label>Goal</label><input id="goal" value="Build a data storytelling portfolio"></div><div class="field"><label>Topics, comma separated</label><input id="topics" value="Python, charts, storytelling"></div><div class="field"><label>Days</label><input id="days" type="number" value="7" min="1" max="30"></div><div class="field"><label>Hours available</label><input id="hours" type="number" value="7" min="0.5" step="0.5"></div><div class="field full"><button class="btn primary" type="submit">Generate study sprint</button></div></form></section><aside class="card"><div class="card-head"><div><div class="card-kicker">Design principle</div><h2 class="card-title">Small enough to finish</h2></div></div><div class="notice">A good plan makes the next action concrete. Treat this as a starting point, not a rigid calendar.</div><div class="spacer"></div><div id="plan-meta" class="metric"><div class="metric-label">Plan status</div><div class="metric-value" style="font-size:21px">Awaiting inputs</div></div></aside></div><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Generated sequence</div><h2 class="card-title">Your next sessions</h2></div></div><div id="tasks" class="list"><div class="empty">Generate a sprint to see the daily sequence.</div></div></section><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Documented prompt template</div><h2 class="card-title">Role · Context · Format · Constraints</h2><p class="card-subtitle">The graded artifact: the actual prompt design, with each section's reason for existing.</p></div></div><div id="prompt-template" class="list"></div></section><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">5 sample interactions</div><h2 class="card-title">Syllabus + time blocks → full plan</h2></div></div><div id="sample-interactions" class="list"></div></section>
+
+  
+</main>
+</div>
+<div id="toast" class="toast"></div>
+<script>window.INITIAL_DATA = {};</script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

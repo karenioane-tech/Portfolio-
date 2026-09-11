@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Content Generator · Data Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">DL</span><span>Data Lab</span></a>
+    <div class="nav-label">Week 5 · AI & prompt engineering</div>
+    <nav class="nav">
+      <a class="nav-link active" href="{{ url_for('index') }}"><span class="nav-dot"></span>Workspace</a>
+      <div class="nav-link" aria-label="Project status"><span class="nav-dot" style="background:var(--good)"></span>Project status: READY</div>
+    </nav>
+    <div class="sidebar-note"><strong>Build note</strong>This project is intentionally standalone: its Flask backend, templates, CSS, JS, and data stay inside this folder.</div>
+  </aside>
+  <main class="main">
+    <div class="topbar"><div class="eyebrow">W5 / AI & prompt engineering</div><div class="topbar-meta"><span class="status"><span class="status-dot"></span>Submission build</span><span class="small muted">Project status: READY FOR REVIEW</span></div></div>
+    <section class="hero"><div><div class="eyebrow">Project P2</div><h1>Content Generator</h1><p>Explore prompt engineering as a structured input-output loop: define the audience, tone, channel, and action before drafting.</p></div><div class="hero-chip"><span>Mode</span><strong>Structured</strong></div></section>
+
+<div class="grid grid-main"><section class="card"><div class="card-head"><div><div class="card-kicker">Prompt studio</div><h2 class="card-title">Brief the generator</h2><p class="card-subtitle">This local demo uses a predictable template so you can inspect the generation logic.</p></div></div><form id="content-form" class="form-grid"><div class="field full"><label>Topic</label><input id="topic" value="data literacy for everyday decisions"></div><div class="field"><label>Audience</label><input id="audience" value="busy beginners"></div><div class="field"><label>Tone</label><input id="tone" value="clear and encouraging"></div><div class="field"><label>Channel</label><select id="channel"><option>LinkedIn</option><option>Newsletter</option><option>Short video</option></select></div><div class="field full"><button class="btn primary" type="submit">Generate draft</button></div></form></section><aside class="card"><div class="card-head"><div><div class="card-kicker">Prompt anatomy</div><h2 class="card-title">Four levers</h2></div></div><div class="list"><div class="list-item"><div><h3>Topic</h3><p>What the draft should make clearer</p></div><span class="tag">Subject</span></div><div class="list-item"><div><h3>Audience</h3><p>Who the message is for</p></div><span class="tag">Context</span></div><div class="list-item"><div><h3>Tone</h3><p>How the message should feel</p></div><span class="tag">Voice</span></div><div class="list-item"><div><h3>Channel</h3><p>Where the output will live</p></div><span class="tag">Format</span></div></div></aside></div><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Draft output</div><h2 id="output-channel" class="card-title">No draft yet</h2></div><button id="copy" class="btn ghost" type="button">Copy draft</button></div><div id="draft" class="grid"><div class="empty">Your hook, body, and call to action will appear here.</div></div></section><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Batch article summarizer</div><h2 class="card-title">Paste multiple articles</h2><p class="card-subtitle">One article per line. Each gets a ~100-word summary + 3 social posts, then can be exported to a real CSV.</p></div></div><textarea id="batch-input" rows="5" style="width:100%;margin-bottom:12px" placeholder="Paste up to 5 articles, one per line...">Renewable energy adoption accelerated again this year as battery storage costs fell sharply, making solar-plus-storage cost-competitive with gas peaker plants in most US regions.
+Remote work productivity research now points to asynchronous communication norms, not tool choice, as the biggest driver of team output.</textarea><div class="field-row"><button id="batch-generate" class="btn primary" type="button">Generate summaries + posts</button><button id="batch-export" class="btn ghost" type="button">Export CSV</button></div><div class="spacer"></div><div id="batch-outputs" class="list"><div class="empty">No batch run yet.</div></div><div id="batch-risk" class="notice" style="margin-top:12px"></div></section>
+
+  
+</main>
+</div>
+<div id="toast" class="toast"></div>
+<script>window.INITIAL_DATA = {};</script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

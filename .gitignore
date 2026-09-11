@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Local tooling and runtime output
+.DS_Store
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Project files intentionally excluded from this portfolio repository
+*/README.md
+/CURRICULUM_ALIGNMENT.md
+/PROJECT_INDEX.md
+/run_all.sh

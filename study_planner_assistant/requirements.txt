@@ -1,0 +1,2 @@
+Flask>=3.0,<4.0
+# anthropic  # optional: only needed if ANTHROPIC_API_KEY is set for live LLM calls

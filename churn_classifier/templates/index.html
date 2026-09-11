@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Churn Classifier · Data Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">DL</span><span>Data Lab</span></a>
+    <div class="nav-label">Week 4 · Statistics & ML</div>
+    <nav class="nav">
+      <a class="nav-link active" href="{{ url_for('index') }}"><span class="nav-dot"></span>Workspace</a>
+      <div class="nav-link" aria-label="Project status"><span class="nav-dot" style="background:var(--good)"></span>Project status: READY</div>
+    </nav>
+    <div class="sidebar-note"><strong>Build note</strong>This project is intentionally standalone: its Flask backend, templates, CSS, JS, and data stay inside this folder.</div>
+  </aside>
+  <main class="main">
+    <div class="topbar"><div class="eyebrow">W4 / Statistics & ML</div><div class="topbar-meta"><span class="status"><span class="status-dot"></span>Submission build</span><span class="small muted">Project status: READY FOR REVIEW</span></div></div>
+    <section class="hero"><div><div class="eyebrow">Project P2</div><h1>Churn Classifier</h1><p>A real scikit-learn logistic regression, trained on a labeled dataset with a train/test split - every score below comes from that model, not a fixed rule.</p></div><div class="hero-chip"><span>Model</span><strong>Logistic Regression</strong></div></section>
+
+<div class="grid grid-main"><section class="card"><div class="card-head"><div><div class="card-kicker">Customer profile</div><h2 class="card-title">Score one account</h2><p class="card-subtitle">The demo uses transparent rules so every prediction can be explained.</p></div></div><form id="churn-form" class="form-grid"><div class="field"><label>Months active</label><input id="months" type="number" value="4" min="0"></div><div class="field"><label>Usage score (0–100)</label><input id="usage" type="number" value="38" min="0" max="100"></div><div class="field"><label>Support contacts</label><input id="support" type="number" value="3" min="0"></div><div class="field"><label>Late payments</label><input id="late" type="number" value="1" min="0"></div><div class="field"><label>Plan</label><select id="plan"><option>Basic</option><option selected>Standard</option><option>Pro</option></select></div><div class="field full"><button class="btn primary" type="submit">Classify risk</button></div></form></section><aside class="card"><div class="card-head"><div><div class="card-kicker">Model output</div><h2 id="band" class="card-title">Awaiting profile</h2></div></div><div class="metric"><div class="metric-label">Risk score</div><div id="score" class="metric-value">—</div><div class="progress"><span id="score-bar" style="width:0%"></span></div></div><div class="spacer"></div><div id="action" class="notice">Run the classifier to receive an intervention suggestion.</div></aside></div><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Explainability</div><h2 class="card-title">Signals behind the result</h2></div></div><div id="reasons" class="list"><div class="empty">No prediction yet.</div></div></section><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Model evaluation</div><h2 class="card-title">Held-out test set metrics</h2><p class="card-subtitle">Computed once at server startup from a real train/test split - not typed in.</p></div></div><div class="grid grid-3"><div class="metric"><div class="metric-label">Accuracy</div><div id="eval-accuracy" class="metric-value">—</div></div><div class="metric"><div class="metric-label">Precision</div><div id="eval-precision" class="metric-value">—</div></div><div class="metric"><div class="metric-label">Recall</div><div id="eval-recall" class="metric-value">—</div></div></div><div class="spacer"></div><div class="grid grid-main"><div><div class="card-kicker">Confusion matrix</div><div id="eval-confusion" class="table-wrap"></div></div><div><div class="card-kicker">Top 3 features</div><div id="eval-features" class="list"></div></div></div></section>
+
+  
+</main>
+</div>
+<div id="toast" class="toast"></div>
+<script>window.INITIAL_DATA = {};</script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

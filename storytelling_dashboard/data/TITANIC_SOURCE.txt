@@ -1,0 +1,3 @@
+Public dataset selected: Titanic dataset
+Suggested source: https://www.kaggle.com/c/titanic/data or Data Science Dojo Titanic CSV.
+This package includes a portfolio-ready browser dashboard structure and a reproducible source note. Download the public CSV into data/titanic.csv before final no-code/Colab reproduction if required by your assessor.

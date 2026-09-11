@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Survey Insights Report · Data Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">DL</span><span>Data Lab</span></a>
+    <div class="nav-label">Week 4 · Statistics & ML</div>
+    <nav class="nav">
+      <a class="nav-link active" href="{{ url_for('index') }}"><span class="nav-dot"></span>Workspace</a>
+      <div class="nav-link" aria-label="Project status"><span class="nav-dot" style="background:var(--good)"></span>Project status: READY</div>
+    </nav>
+    <div class="sidebar-note"><strong>Build note</strong>This project is intentionally standalone: its Flask backend, templates, CSS, JS, and data stay inside this folder.</div>
+  </aside>
+  <main class="main">
+    <div class="topbar"><div class="eyebrow">W4 / Statistics & ML</div><div class="topbar-meta"><span class="status"><span class="status-dot"></span>Submission build</span><span class="small muted">Project status: READY FOR REVIEW</span></div></div>
+    <section class="hero"><div><div class="eyebrow">Project P1</div><h1>Survey Insights Report</h1><p>Summarize voice-of-customer signals, make the strongest themes visible, and leave a clear bridge from evidence to action.</p></div><div class="hero-chip"><span>Sample</span><strong>n=8</strong></div></section>
+
+<section class="grid grid-3"><div class="metric"><div class="metric-label">Responses</div><div id="responses" class="metric-value">—</div><div class="metric-change">Sample size</div></div><div class="metric"><div class="metric-label">Satisfaction</div><div id="satisfaction" class="metric-value">—</div><div class="metric-change">Out of 5</div></div><div class="metric"><div class="metric-label">NPS</div><div id="nps" class="metric-value">—</div><div class="metric-change">Promoters minus detractors</div></div></section><div class="spacer"></div><div class="grid grid-main"><section class="card"><div class="card-head"><div><div class="card-kicker">Themes</div><h2 class="card-title">What people are saying</h2></div></div><div id="themes" class="list"></div></section><aside class="card"><div class="card-head"><div><div class="card-kicker">By team</div><h2 class="card-title">Satisfaction split</h2></div></div><div id="teams" class="list"></div></aside></div><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Response explorer</div><h2 class="card-title">Individual signals</h2></div></div><div id="table" class="table-wrap"></div></section><div class="spacer"></div><section class="card"><div class="card-head"><div><div class="card-kicker">Statistics · 5 questions</div><h2 class="card-title">Mean, median, variance, std dev</h2></div></div><div id="question-stats" class="table-wrap"></div></section><div class="spacer"></div><div class="grid grid-main"><section class="card"><div class="card-head"><div><div class="card-kicker">Correlation</div><h2 class="card-title">Strongest relationships</h2></div></div><div id="correlations" class="list"></div></section><aside class="card"><div class="card-head"><div><div class="card-kicker">Recommendations</div><h2 class="card-title">Grounded in the numbers above</h2></div></div><div id="recommendations" class="list"></div></aside></div>
+
+  
+</main>
+</div>
+<div id="toast" class="toast"></div>
+<script>window.INITIAL_DATA = {{ initial_data|tojson }};</script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

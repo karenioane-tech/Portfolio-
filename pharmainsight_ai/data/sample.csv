@@ -1,0 +1,7 @@
+medicine,region,stock,demand,sales,quality
+CardioSafe,North,72,91,182,Pass
+CardioSafe,South,48,77,151,Pass
+GlucoRelief,North,34,88,169,Pass
+GlucoRelief,East,19,94,201,Review
+RespiraClear,East,64,53,98,Pass
+RespiraClear,South,27,67,127,Pass
